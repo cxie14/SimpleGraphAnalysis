@@ -1,3 +1,4 @@
+package ca.ubc.ece.cpen221.mp3.graph;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -7,13 +8,9 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import ca.ubc.ece.cpen221.mp3.graph.AdjacencyListGraph;
-import ca.ubc.ece.cpen221.mp3.graph.AdjacencyMatrixGraph;
-import ca.ubc.ece.cpen221.mp3.graph.Algorithms;
 import ca.ubc.ece.cpen221.mp3.staff.Graph;
 import ca.ubc.ece.cpen221.mp3.staff.NoPathFoundException;
 import ca.ubc.ece.cpen221.mp3.staff.Vertex;
-import ca.ubc.ece.cpen221.mp3.graph.AdjacencyListGraph;
 
 public class TestAlgorithms {
 
@@ -98,11 +95,11 @@ public class TestAlgorithms {
 		
 		List<Vertex> commonUpstreamList1= new ArrayList<Vertex>();
 		
-		commonUpstreamList1.add(v2);
-		assertEquals(commonUpstreamList1, Algorithms.commonUpstreamVertices(testGraph1, v4, v6));
+		commonUpstreamList1.add(v8);
+		assertEquals(commonUpstreamList1, Algorithms.commonUpstreamVertices(testGraph1, v7, v6));
 		
 		List<Vertex> commonUpstreamList2= new ArrayList<Vertex>(0);
-		assertEquals(commonUpstreamList2, Algorithms.commonUpstreamVertices(testGraph1,v7, v5));
+		assertEquals(commonUpstreamList2, Algorithms.commonUpstreamVertices(testGraph1,v2, v1));
 	}
 
 	@Test
@@ -131,9 +128,9 @@ public class TestAlgorithms {
 		testGraph1.addEdge(v5, v8);
 		
 		List<Vertex> commonDownstreamList1= new ArrayList<Vertex>();
-		commonDownstreamList1.add(v8);
+		commonDownstreamList1.add(v2);
 		
-		assertEquals(commonDownstreamList1, Algorithms.commonDownstreamVertices(testGraph1, v6, v5));
+		assertEquals(commonDownstreamList1, Algorithms.commonDownstreamVertices(testGraph1, v7, v4));
 		
 		List<Vertex> commonDownstreamList2= new ArrayList<Vertex>();
 		

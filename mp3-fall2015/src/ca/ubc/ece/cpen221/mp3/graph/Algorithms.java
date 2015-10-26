@@ -37,6 +37,8 @@ public class Algorithms {
 	 */
 	public static int shortestDistance(Graph graph, Vertex a, Vertex b) throws NoPathFoundException {
 		// TODO: Implement this method and others
+	    if(a.equals(b)) return 0;
+	    
 	    Queue<Vertex> nextVertexQueue = new LinkedList<Vertex>();
 	    HashSet<Vertex> scheduledSet = new HashSet<Vertex>();
 	    
@@ -49,7 +51,7 @@ public class Algorithms {
 	        nextVertexQueue = new LinkedList<>();
 	        while(!currentVertexQueue.isEmpty()){
 	            Vertex currentRoot = currentVertexQueue.poll();
-	            if(currentVertexQueue.poll().equals(b))
+	            if(currentRoot.equals(b))
 	                return depth;
 	            else{
 	                for(Vertex each_child : graph.getDownstreamNeighbors(currentRoot)){
