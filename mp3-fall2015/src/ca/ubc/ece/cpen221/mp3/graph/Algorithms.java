@@ -71,6 +71,7 @@ public class Algorithms {
 	 * @return A list of vertices that are the common upstream vertices of a and
 	 *         b
 	 */
+
 	public static List<Vertex> commonUpstreamVertices(Graph graph, Vertex a, Vertex b) {
 		List<Vertex> aList = graph.getUpstreamNeighbors(a);
 		List<Vertex> bList = graph.getUpstreamNeighbors(b);
@@ -84,7 +85,7 @@ public class Algorithms {
 			}
 		}
 		return commonUpStreamList;
-	}
+	}	
 
 	/**
 	 * Finds the common downstream vertices such that for each downstream vertex

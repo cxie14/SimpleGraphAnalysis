@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+
 import java.util.*;
 import org.junit.Test;
 
@@ -111,5 +112,4 @@ public class TestAdjacencyListGraph {
 		assertEquals(upstreamNeighborsList2, testGraph.getUpstreamNeighbors(v1));
 
 	}
-
 }
